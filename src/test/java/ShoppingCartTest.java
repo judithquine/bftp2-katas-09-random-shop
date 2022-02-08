@@ -67,7 +67,7 @@ public class ShoppingCartTest {
     void calculatePriceForRedFish() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "red", new BigDecimal("2.5"), "nemo", null);
+        Product product = new Product(null, null, false, "red", BigDecimal.valueOf(2.5), "nemo", null);
 
         shoppingCart.addProduct(product);
 
