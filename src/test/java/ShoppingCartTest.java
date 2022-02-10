@@ -53,14 +53,14 @@ public class ShoppingCartTest {
     }
 
     @Test
-    void calculatePriceForRedFish() {
+    void calculatePriceForBlueFish() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "red", BigDecimal.valueOf(2.5), "nemo", null);
+        Product product = new Product(null, null, false, "red", BigDecimal.valueOf(0.1), "nemo", null);
 
         shoppingCart.addProduct(product);
 
-        assertThat(shoppingCart.getTotalPrice(), equalTo(2.5));
+        assertThat(shoppingCart.getTotalPrice(), equalTo(0.1));
     }
 
     @Test
@@ -117,6 +117,19 @@ public class ShoppingCartTest {
 
         assertThat(shoppingCart.getTotalPrice(), equalTo(40000.00));
     }
+
+    @Test
+    void calculatePriceForGoldFish() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "gold", BigDecimal.valueOf(100.0), "nemo", null);
+
+        shoppingCart.addProduct(product);
+
+        assertThat(shoppingCart.getTotalPrice(), equalTo(10000.0));
+    }
+
+
 
 
 }
